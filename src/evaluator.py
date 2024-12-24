@@ -16,6 +16,8 @@ def evaluate_expression(input_data, config_data):
         allow_builtins = config_data.get("allowBuiltins", False)
         builtins_dict = {"__builtins__": None} if not allow_builtins else {}
 
+        print("Evaluating expression: {expression}")
+
         # Evaluate the expression securely (if allowBuiltins = false, we don't allow them)
         result = eval(expression, builtins_dict, {})
         return json.dumps({"result": result})
