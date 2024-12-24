@@ -1,0 +1,33 @@
+{
+    "toolName": "expression-evaluator",
+    "platform": "python",
+  
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string"
+        }
+      },
+      "required": ["query"]
+    },
+  
+    "configSchema": {},
+  
+    "outputSchema": {
+      "type": "object",
+      "properties": {
+        "result": {},
+        "error": { "type": "string" }
+      }
+    },
+  
+    "pre": [
+      "pip install -r requirements.txt"
+    ],
+  
+    "run": [
+      "python src/evaluator.py '{json_input}' '{json_config}'"
+    ]
+  }
+  
